@@ -3,7 +3,7 @@ module testbench();
 reg clk;
 reg reset;
 reg [7:0] qa;
-lk0
+
 testbench testbench1(.clk(clk), .get(get), .qa(qa));
 
 initial
