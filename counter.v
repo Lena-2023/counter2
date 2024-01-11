@@ -1,6 +1,7 @@
 module counter; 
     input wire reset;
     input wire clk;
+    
     input wire [7:0] wdata;
     input wire wr;
     output reg [7:0] data;
