@@ -1,29 +1,18 @@
-module counter; 
-    input wire reset;
-    input wire clk;
+module counter( 
     
-    input wire [7:0] wdata;
-    input wire wr;
-    output reg [7:0] data;
-    
-    output reg [7:0] qa;
+    input wire clk,
+    input wire reset,
+   
+    output reg [7:0] qa
   
+);
+
 always @ (posedge clk or posedge reset)
 
-    begin
-    
-    qa = qa + 1;
-        
-    if (reset)
-       data <= 8'h00;
-         
-    if(wr)
-    begin
-       data <= wdata;
-       $display("written %h",wdata);
-    end
-    else
-       data <= data + 8'h01;
-      
-      end
+ begin
+  if(!reset)
+   qa <= 0;
+  else
+   qa <= qa + 1;
+ end
 endmodule

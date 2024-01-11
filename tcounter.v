@@ -1,10 +1,11 @@
-module testbench();
+module testbench;
 
 reg clk;
 reg reset;
 reg [7:0] qa;
 
-testbench testbench1(.clk(clk), .get(get), .qa(qa));
+//counter cnt1(.clk(clk), .reset(reset), .qa(qa));
+//counter cnt1 (clk, reset, qa);
 
 initial
 begin
@@ -16,7 +17,7 @@ begin
     $monitor(reset,, clk,, qa);
   
         clk <= 0; 
-        repeat (3000) 
+        repeat (300) 
             
         begin
                 #10;
