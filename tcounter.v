@@ -2,10 +2,14 @@ module testbench;
 
 reg clk;
 reg reset;
-reg [7:0] qa;
 
-//counter cnt1(.clk(clk), .reset(reset), .qa(qa));
-//counter cnt1 (clk, reset, qa);
+wire [7:0] triangl;
+wire [7:0] saw;
+wire [7:0] revsaw;
+wire [7:0] meander;
+wire [7:0] meander025;
+
+counter cnt1(.clk(clk), .reset(reset), .saw(saw), .revsaw(revsaw), .triangl(triangl), .meander(meander), .meander025(meander025));
 
 initial
 begin
@@ -14,10 +18,10 @@ begin
 
     $display("starting testbench!!!!");
     
-    $monitor(reset,, clk,, qa);
+    $monitor(reset,, clk,, saw,, revsaw,, triangl,, meander,, meander025);
   
         clk <= 0; 
-        repeat (300) 
+        repeat (3000) 
             
         begin
                 #10;
