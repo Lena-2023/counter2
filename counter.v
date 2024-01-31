@@ -45,7 +45,7 @@ begin
 begin
 if (count_down == 1'b0)
 begin
-  if (triangl == 8'b11111111) // check for top of count
+  if (triangl == 8'b01111111) // check for top of count
   begin
     count_down <= 1'b1;
     triangl <= triangl-1;
@@ -70,7 +70,7 @@ end
 //а если больше 64 1, а меньше - 0 , то будет заполнение на 25%
 //ну там на выход надо генерить из пилы, но по условию. тупо один if
  begin
-  if(triangl <= 8'b01111111)
+  if(triangl <= 8'b00111111)  // 8'b01111111
    meander <= 1;
     else
    meander <= 0;
@@ -78,15 +78,14 @@ end
 
 //meander025
 begin
-  if(triangl <= 8'b01000000)
+  if(triangl <= 8'b00100000) //8'b01000000
    meander025 <= 1;
     else
    meander025 <= 0;
  end
 end  
-
-
-
-
-
 endmodule
+
+
+
+
